@@ -30,6 +30,8 @@ abstract class $JokeStateCopyWith<$Res> {
       _$JokeStateCopyWithImpl<$Res, JokeState>;
   @useResult
   $Res call({JokeModel joke, bool isLoading});
+
+  $JokeModelCopyWith<$Res> get joke;
 }
 
 /// @nodoc
@@ -45,11 +47,11 @@ class _$JokeStateCopyWithImpl<$Res, $Val extends JokeState>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? joke = freezed,
+    Object? joke = null,
     Object? isLoading = null,
   }) {
     return _then(_value.copyWith(
-      joke: freezed == joke
+      joke: null == joke
           ? _value.joke
           : joke // ignore: cast_nullable_to_non_nullable
               as JokeModel,
@@ -58,6 +60,14 @@ class _$JokeStateCopyWithImpl<$Res, $Val extends JokeState>
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
     ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $JokeModelCopyWith<$Res> get joke {
+    return $JokeModelCopyWith<$Res>(_value.joke, (value) {
+      return _then(_value.copyWith(joke: value) as $Val);
+    });
   }
 }
 
@@ -69,6 +79,9 @@ abstract class _$$_JokeStateCopyWith<$Res> implements $JokeStateCopyWith<$Res> {
   @override
   @useResult
   $Res call({JokeModel joke, bool isLoading});
+
+  @override
+  $JokeModelCopyWith<$Res> get joke;
 }
 
 /// @nodoc
@@ -82,11 +95,11 @@ class __$$_JokeStateCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? joke = freezed,
+    Object? joke = null,
     Object? isLoading = null,
   }) {
     return _then(_$_JokeState(
-      joke: freezed == joke
+      joke: null == joke
           ? _value.joke
           : joke // ignore: cast_nullable_to_non_nullable
               as JokeModel,
@@ -120,14 +133,13 @@ class _$_JokeState implements _JokeState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_JokeState &&
-            const DeepCollectionEquality().equals(other.joke, joke) &&
+            (identical(other.joke, joke) || other.joke == joke) &&
             (identical(other.isLoading, isLoading) ||
                 other.isLoading == isLoading));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(joke), isLoading);
+  int get hashCode => Object.hash(runtimeType, joke, isLoading);
 
   @JsonKey(ignore: true)
   @override
