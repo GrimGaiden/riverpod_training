@@ -5,7 +5,7 @@ part 'character_model.g.dart';
 
 @freezed
 class CharacterModel with _$CharacterModel {
-  factory CharacterModel(int? id, String? name, String? image) =
+  factory CharacterModel(int? id, @required String name, String? image) =
       _CharacterModel;
 
   factory CharacterModel.fromJson(Map<String, dynamic> json) =>

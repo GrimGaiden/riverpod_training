@@ -23,9 +23,9 @@ class HomePage extends ConsumerWidget {
             const SizedBox(height: 20.0),
             //Todo cambiar a products
             ElevatedButton(
-                child: const Text('products'),
+                child: const Text('Rick and Morty'),
                 onPressed: () {
-                  Navigator.of(context).pushNamed(Routes.jokes);
+                  Navigator.of(context).pushNamed(Routes.ram);
                 }),
           ],
         ),

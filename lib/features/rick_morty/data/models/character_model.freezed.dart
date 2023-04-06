@@ -21,7 +21,7 @@ CharacterModel _$CharacterModelFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$CharacterModel {
   int? get id => throw _privateConstructorUsedError;
-  String? get name => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
   String? get image => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -36,7 +36,7 @@ abstract class $CharacterModelCopyWith<$Res> {
           CharacterModel value, $Res Function(CharacterModel) then) =
       _$CharacterModelCopyWithImpl<$Res, CharacterModel>;
   @useResult
-  $Res call({int? id, String? name, String? image});
+  $Res call({int? id, String name, String? image});
 }
 
 /// @nodoc
@@ -53,7 +53,7 @@ class _$CharacterModelCopyWithImpl<$Res, $Val extends CharacterModel>
   @override
   $Res call({
     Object? id = freezed,
-    Object? name = freezed,
+    Object? name = null,
     Object? image = freezed,
   }) {
     return _then(_value.copyWith(
@@ -61,10 +61,10 @@ class _$CharacterModelCopyWithImpl<$Res, $Val extends CharacterModel>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int?,
-      name: freezed == name
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       image: freezed == image
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
@@ -81,7 +81,7 @@ abstract class _$$_CharacterModelCopyWith<$Res>
       __$$_CharacterModelCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int? id, String? name, String? image});
+  $Res call({int? id, String name, String? image});
 }
 
 /// @nodoc
@@ -96,7 +96,7 @@ class __$$_CharacterModelCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = freezed,
-    Object? name = freezed,
+    Object? name = null,
     Object? image = freezed,
   }) {
     return _then(_$_CharacterModel(
@@ -104,10 +104,10 @@ class __$$_CharacterModelCopyWithImpl<$Res>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int?,
-      freezed == name
+      null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       freezed == image
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
@@ -127,7 +127,7 @@ class _$_CharacterModel implements _CharacterModel {
   @override
   final int? id;
   @override
-  final String? name;
+  final String name;
   @override
   final String? image;
 
@@ -166,7 +166,7 @@ class _$_CharacterModel implements _CharacterModel {
 
 abstract class _CharacterModel implements CharacterModel {
   factory _CharacterModel(
-          final int? id, final String? name, final String? image) =
+          final int? id, final String name, final String? image) =
       _$_CharacterModel;
 
   factory _CharacterModel.fromJson(Map<String, dynamic> json) =
@@ -175,7 +175,7 @@ abstract class _CharacterModel implements CharacterModel {
   @override
   int? get id;
   @override
-  String? get name;
+  String get name;
   @override
   String? get image;
   @override
