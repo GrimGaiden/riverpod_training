@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'ram_character_api.dart';
+part of 'ram_character_api_metodos.dart';
 
 // **************************************************************************
 // RiverpodGenerator
 // **************************************************************************
 
-String _$asyncRamCaharcterApiHash() =>
-    r'03670732fa662957df1b6961466200ae63aaf9e0';
+String _$asyncRamCaharcterApiMetodosHash() =>
+    r'72672028d08ac36c6abebf0a2384ade4758456fa';
 
 /// Copied from Dart SDK
 class _SystemHash {
@@ -30,39 +30,40 @@ class _SystemHash {
   }
 }
 
-abstract class _$AsyncRamCaharcterApi
+abstract class _$AsyncRamCaharcterApiMetodos
     extends BuildlessAutoDisposeAsyncNotifier<CharacterModel> {
   late final int id;
 
-  FutureOr<CharacterModel> build(
-    int id,
-  );
+  FutureOr<CharacterModel> build({
+    int id = 1,
+  });
 }
 
-/// See also [AsyncRamCaharcterApi].
-@ProviderFor(AsyncRamCaharcterApi)
-const asyncRamCaharcterApiProvider = AsyncRamCaharcterApiFamily();
+/// See also [AsyncRamCaharcterApiMetodos].
+@ProviderFor(AsyncRamCaharcterApiMetodos)
+const asyncRamCaharcterApiMetodosProvider = AsyncRamCaharcterApiMetodosFamily();
 
-/// See also [AsyncRamCaharcterApi].
-class AsyncRamCaharcterApiFamily extends Family<AsyncValue<CharacterModel>> {
-  /// See also [AsyncRamCaharcterApi].
-  const AsyncRamCaharcterApiFamily();
+/// See also [AsyncRamCaharcterApiMetodos].
+class AsyncRamCaharcterApiMetodosFamily
+    extends Family<AsyncValue<CharacterModel>> {
+  /// See also [AsyncRamCaharcterApiMetodos].
+  const AsyncRamCaharcterApiMetodosFamily();
 
-  /// See also [AsyncRamCaharcterApi].
-  AsyncRamCaharcterApiProvider call(
-    int id,
-  ) {
-    return AsyncRamCaharcterApiProvider(
-      id,
+  /// See also [AsyncRamCaharcterApiMetodos].
+  AsyncRamCaharcterApiMetodosProvider call({
+    int id = 1,
+  }) {
+    return AsyncRamCaharcterApiMetodosProvider(
+      id: id,
     );
   }
 
   @override
-  AsyncRamCaharcterApiProvider getProviderOverride(
-    covariant AsyncRamCaharcterApiProvider provider,
+  AsyncRamCaharcterApiMetodosProvider getProviderOverride(
+    covariant AsyncRamCaharcterApiMetodosProvider provider,
   ) {
     return call(
-      provider.id,
+      id: provider.id,
     );
   }
 
@@ -78,33 +79,34 @@ class AsyncRamCaharcterApiFamily extends Family<AsyncValue<CharacterModel>> {
       _allTransitiveDependencies;
 
   @override
-  String? get name => r'asyncRamCaharcterApiProvider';
+  String? get name => r'asyncRamCaharcterApiMetodosProvider';
 }
 
-/// See also [AsyncRamCaharcterApi].
-class AsyncRamCaharcterApiProvider extends AutoDisposeAsyncNotifierProviderImpl<
-    AsyncRamCaharcterApi, CharacterModel> {
-  /// See also [AsyncRamCaharcterApi].
-  AsyncRamCaharcterApiProvider(
-    this.id,
-  ) : super.internal(
-          () => AsyncRamCaharcterApi()..id = id,
-          from: asyncRamCaharcterApiProvider,
-          name: r'asyncRamCaharcterApiProvider',
+/// See also [AsyncRamCaharcterApiMetodos].
+class AsyncRamCaharcterApiMetodosProvider
+    extends AutoDisposeAsyncNotifierProviderImpl<AsyncRamCaharcterApiMetodos,
+        CharacterModel> {
+  /// See also [AsyncRamCaharcterApiMetodos].
+  AsyncRamCaharcterApiMetodosProvider({
+    this.id = 1,
+  }) : super.internal(
+          () => AsyncRamCaharcterApiMetodos()..id = id,
+          from: asyncRamCaharcterApiMetodosProvider,
+          name: r'asyncRamCaharcterApiMetodosProvider',
           debugGetCreateSourceHash:
               const bool.fromEnvironment('dart.vm.product')
                   ? null
-                  : _$asyncRamCaharcterApiHash,
-          dependencies: AsyncRamCaharcterApiFamily._dependencies,
+                  : _$asyncRamCaharcterApiMetodosHash,
+          dependencies: AsyncRamCaharcterApiMetodosFamily._dependencies,
           allTransitiveDependencies:
-              AsyncRamCaharcterApiFamily._allTransitiveDependencies,
+              AsyncRamCaharcterApiMetodosFamily._allTransitiveDependencies,
         );
 
   final int id;
 
   @override
   bool operator ==(Object other) {
-    return other is AsyncRamCaharcterApiProvider && other.id == id;
+    return other is AsyncRamCaharcterApiMetodosProvider && other.id == id;
   }
 
   @override
@@ -117,10 +119,10 @@ class AsyncRamCaharcterApiProvider extends AutoDisposeAsyncNotifierProviderImpl<
 
   @override
   FutureOr<CharacterModel> runNotifierBuild(
-    covariant AsyncRamCaharcterApi notifier,
+    covariant AsyncRamCaharcterApiMetodos notifier,
   ) {
     return notifier.build(
-      id,
+      id: id,
     );
   }
 }

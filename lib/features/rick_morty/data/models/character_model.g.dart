@@ -9,7 +9,7 @@ part of 'character_model.dart';
 _$_CharacterModel _$$_CharacterModelFromJson(Map<String, dynamic> json) =>
     _$_CharacterModel(
       json['id'] as int?,
-      json['name'] as String,
+      json['name'] as String?,
       json['image'] as String?,
     );
 
