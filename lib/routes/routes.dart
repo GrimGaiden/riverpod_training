@@ -3,5 +3,7 @@ class Routes {
   static const String jokes = "/jokes";
   static const String ram = "/ram";
   static const String login = "/login";
+  static const String loginHardcodeado = "/login_hardcodeado";
+
   // static const String products = "/products";
 }
