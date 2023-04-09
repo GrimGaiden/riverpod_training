@@ -27,6 +27,12 @@ class HomePage extends ConsumerWidget {
                 onPressed: () {
                   Navigator.of(context).pushNamed(Routes.ram);
                 }),
+            const SizedBox(height: 20.0),
+            ElevatedButton(
+                child: const Text('Login'),
+                onPressed: () {
+                  Navigator.of(context).pushNamed(Routes.login);
+                }),
           ],
         ),
       ),

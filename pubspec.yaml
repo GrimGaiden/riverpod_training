@@ -8,6 +8,7 @@ environment:
 
 dependencies:
   dio: ^5.0.3
+  email_validator: ^2.1.17
   flutter:
     sdk: flutter
   flutter_riverpod: ^2.3.2
