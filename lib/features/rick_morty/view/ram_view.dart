@@ -12,8 +12,10 @@ class RAMView extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final characterResponse1 = ref.watch(AsyncRamCaharcterApiMetodosFamily());
-    final characterResponse2 = ref.watch(asyncRamCaharcterApiMetodosProvider());
+    final characterResponse1 =
+        ref.watch(asyncRamCaharcterApiMetodosProvider(id: 1));
+    final characterResponse2 =
+        ref.watch(asyncRamCaharcterApiMetodosProvider(id: 2));
 
     return Scaffold(
       body: Row(
@@ -22,30 +24,30 @@ class RAMView extends ConsumerWidget {
             children: [
               Container(
                   child: characterResponse1.when(
-                data: (characterResponse1) => Text(characterResponse1.name!),
+                data: (characterResponse1) => Text("${characterResponse1.id}"),
                 error: (err, stack) => Text('Mi Error: $err'),
                 loading: () => const CircularProgressIndicator(),
               )),
-              ElevatedButton(
-                  onPressed: () => ref
-                      .read(asyncRamCaharcterApiMetodosProvider.notifier)
-                      .getCharacter(5),
-                  child: const Text("Id 5"))
+              // ElevatedButton(
+              //     onPressed: () => ref
+              //         .read(asyncRamCaharcterApiMetodosProvider.notifier)
+              //         .getCharacter(1),
+              //     child: const Text("Id 1"))
             ],
           ),
           Column(
             children: [
               Container(
                   child: characterResponse2.when(
-                data: (characterResponse2) => Text(characterResponse2.name!),
+                data: (characterResponse2) => Text("${characterResponse2.id}"),
                 error: (err, stack) => Text('Mi Error: $err'),
                 loading: () => const CircularProgressIndicator(),
               )),
-              ElevatedButton(
-                  onPressed: () => ref
-                      .read(asyncRamCaharcterApiMetodosProvider.notifier)
-                      .getCharacter(9),
-                  child: const Text("Id 9"))
+              // ElevatedButton(
+              //     onPressed: () => ref
+              //         .read(asyncRamCaharcterApiMetodosProvider.notifier)
+              //         .getCharacter(9),
+              //     child: const Text("Id 9"))
             ],
           )
         ],
