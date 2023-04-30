@@ -1,3 +1,4 @@
+import 'package:appwrite/models.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_training/features/login_hardcodeado/data/appwrite_cliente.dart';
@@ -9,9 +10,21 @@ class LoginHardcodeadoView extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final auth = ref.read(authStateProvider.notifier).loginHardcodeado();
+    // final auth = ref.read(authStateProvider.notifier).loginHardcodeado();
+    // Session response;
     return Scaffold(
       floatingActionButton: FloatingActionButton(
+        // onPressed: () async {
+        //   response = await ref
+        //       .read(authStateProvider.notifier)
+        //       .login('grimgaiden@pm.me', '12345678')
+        //       .then(
+        // (value) {
+        //   print('==value en login==   $value\nemail:');
+        //   Navigator.of(context).pushNamed(Routes.loginSuccessful);
+        // },
+        //   );
+        // },
         onPressed: () async {
           await ref
               .read(authStateProvider.notifier)

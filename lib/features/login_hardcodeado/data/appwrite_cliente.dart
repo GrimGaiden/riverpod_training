@@ -7,6 +7,8 @@ part 'appwrite_cliente.g.dart';
 
 @riverpod
 class AuthState extends _$AuthState {
+  var _idSession;
+
   @override
   build() {
     final clientAW = Client()
@@ -38,9 +40,14 @@ class AuthState extends _$AuthState {
 
     final accountAW = Account(clientAW);
     try {
-      final response =
+      model.Session response =
           await accountAW.createEmailSession(email: mail, password: password);
+      log('appwrite_cliente: login con userid: ${response.userId}}');
+      log('idSession: ${response.$id}}');
+
+      _idSession = response.$id;
       log("${accountAW.get()}");
+      log("${accountAW.get().toString()}");
       return response;
     } on AppwriteException {
       rethrow;
@@ -54,10 +61,24 @@ class AuthState extends _$AuthState {
 
     final accountAW = Account(clientAW);
     try {
-      await accountAW.deleteSessions();
+      await accountAW.deleteSession(sessionId: 'current');
       return true;
     } catch (e) {
       rethrow;
     }
   }
 }
+
+
+// @@riverpod
+// class AsyncAuth extends _$AsyncAuth {
+
+// @override
+// FutureOr<model.Account> build() async {
+//   return _getSesion();
+// }
+
+//   FutureOr<model.Account> _getSesion() {
+//     return 
+//   }
+// } 
