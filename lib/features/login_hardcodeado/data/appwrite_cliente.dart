@@ -7,30 +7,16 @@ part 'appwrite_cliente.g.dart';
 
 @riverpod
 class AuthState extends _$AuthState {
-  var _idSession;
-
+  late Account accountAW;
   @override
   build() {
-    final clientAW = Client()
+    Client client = Client()
         .setEndpoint('http://217.76.139.82/v1')
         .setProject('63e7ebccc96cb679c3cd');
 
-    final accountAW = Account(clientAW);
-    log("${accountAW.get()}");
-    return;
-  }
+    accountAW = Account(client);
 
-  Future<int> loginHardcodeado() async {
-    final clientAW = Client()
-        .setEndpoint('http://217.76.139.82/v1')
-        .setProject('63e7ebccc96cb679c3cd');
-
-    final accountAW = Account(clientAW);
-    await accountAW.createEmailSession(
-        email: 'grimgaiden@pm.me', password: '12345678');
-
-    log("${accountAW.get()}");
-    return 1;
+    return accountAW.get();
   }
 
   Future<model.Session> login(String mail, String password) async {
@@ -45,7 +31,6 @@ class AuthState extends _$AuthState {
       log('appwrite_cliente: login con userid: ${response.userId}}');
       log('idSession: ${response.$id}}');
 
-      _idSession = response.$id;
       log("${accountAW.get()}");
       log("${accountAW.get().toString()}");
       return response;
@@ -68,17 +53,3 @@ class AuthState extends _$AuthState {
     }
   }
 }
-
-
-// @@riverpod
-// class AsyncAuth extends _$AsyncAuth {
-
-// @override
-// FutureOr<model.Account> build() async {
-//   return _getSesion();
-// }
-
-//   FutureOr<model.Account> _getSesion() {
-//     return 
-//   }
-// } 
