@@ -26,9 +26,17 @@ class LoginHardcodeadoView extends ConsumerWidget {
         //   );
         // },
         onPressed: () async {
+          showDialog(
+              context: context,
+              builder: (context) {
+                return Center(
+                  child: const CircularProgressIndicator(),
+                );
+              });
           await ref
               .read(authStateProvider.notifier)
               .login('grimgaiden@pm.me', '12345678')
+              .whenComplete(() => null)
               .then(
             (value) {
               print('==value en login==   $value');
