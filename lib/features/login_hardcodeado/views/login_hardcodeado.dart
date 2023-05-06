@@ -13,6 +13,9 @@ class LoginHardcodeadoView extends ConsumerWidget {
     // final auth = ref.read(authStateProvider.notifier).loginHardcodeado();
     // Session response;
     return Scaffold(
+      appBar: AppBar(
+        title: const Text("Login hardcodeado"),
+      ),
       floatingActionButton: FloatingActionButton(
         // onPressed: () async {
         //   response = await ref
@@ -35,7 +38,7 @@ class LoginHardcodeadoView extends ConsumerWidget {
               });
           await ref
               .read(authStateProvider.notifier)
-              .login('grimgaiden@pm.me', '12345678')
+              .login('raulmestas@gmail.com', '12345678')
               .whenComplete(() => null)
               .then(
             (value) {

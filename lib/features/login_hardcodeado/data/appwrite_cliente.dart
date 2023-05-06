@@ -28,6 +28,8 @@ class AuthState extends _$AuthState {
     try {
       model.Session response =
           await accountAW.createEmailSession(email: mail, password: password);
+      log('username: ${mail}');
+      log('Pass: ${password}');
       log('appwrite_cliente: login con userid: ${response.userId}}');
       log('idSession: ${response.$id}}');
 

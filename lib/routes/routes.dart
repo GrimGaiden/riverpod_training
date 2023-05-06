@@ -4,6 +4,7 @@ class Routes {
   static const String ram = "/ram";
   static const String loginHardcodeado = "/login_hardcodeado";
   static const String loginSuccessful = "/login_successful";
+  static const String loginView = "/login_view";
 
   // static const String products = "/products";
 }

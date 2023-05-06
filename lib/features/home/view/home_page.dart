@@ -33,6 +33,11 @@ class HomePage extends ConsumerWidget {
                 onPressed: () {
                   Navigator.of(context).pushNamed(Routes.loginHardcodeado);
                 }),
+            ElevatedButton(
+                child: const Text('login bien'),
+                onPressed: () {
+                  Navigator.of(context).pushNamed(Routes.loginView);
+                }),
           ],
         ),
       ),
