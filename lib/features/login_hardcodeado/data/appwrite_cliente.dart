@@ -1,6 +1,8 @@
 import 'dart:developer';
 
 import 'package:appwrite/appwrite.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:appwrite/models.dart' as model;
 part 'appwrite_cliente.g.dart';
@@ -19,13 +21,42 @@ class AuthState extends _$AuthState {
     return accountAW.get();
   }
 
-  Future<model.Session> login(String mail, String password) async {
+  FutureOr<dynamic> login(String mail, String password) async {
     final clientAW = Client()
         .setEndpoint('http://217.76.139.82/v1')
         .setProject('63e7ebccc96cb679c3cd');
 
     final accountAW = Account(clientAW);
+
+    // loading cicle
+    // Consumer(
+    //   builder: (context, ref, _) {
+    //     return showDialog(
+    //         context: context,
+    //         builder: (context) {
+    //           return const Center(child: CircularProgressIndicator());
+    //         });
+    //   },
+    // );
+
     try {
+      // showDialog(
+      //     context: context,
+      //     builder: (BuildContext context) {
+      //       return const Center(
+      //         child: CircularProgressIndicator(),
+      //       );
+      //     });
+      //   Widget build(BuildContext context) {
+      //   return showDialog(
+      //     context: context,
+      //     builder: (BuildContext context) {
+      //       return const Center(
+      //         child: CircularProgressIndicator(),
+      //       );
+      //     });
+      // }
+
       model.Session response =
           await accountAW.createEmailSession(email: mail, password: password);
       log('appwrite_cliente: login con userid: ${response.userId}}');

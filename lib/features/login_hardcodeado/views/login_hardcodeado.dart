@@ -10,7 +10,7 @@ class LoginHardcodeadoView extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    // final auth = ref.read(authStateProvider.notifier).loginHardcodeado();
+    // Future<model.Session> authResponse = ref.watch(authStateProvider.notifier);
     // Session response;
     return Scaffold(
       floatingActionButton: FloatingActionButton(
@@ -26,15 +26,27 @@ class LoginHardcodeadoView extends ConsumerWidget {
         //   );
         // },
         onPressed: () async {
-          await ref
+          var algo = await ref
               .read(authStateProvider.notifier)
               .login('grimgaiden@pm.me', '12345678')
-              .then(
-            (value) {
-              print('==value en login==   $value');
-              Navigator.of(context).pushNamed(Routes.loginSuccessful);
-            },
-          );
+              .then(showDialog(
+                  context: context,
+                  builder: (BuildContext context) {
+                    return const Center(
+                      child: CircularProgressIndicator(),
+                    );
+                  }))
+              .whenComplete(() => null);
+
+          // await ref
+          //     .read(authStateProvider.notifier)
+          //     .login('grimgaiden@pm.me', '12345678')
+          //     .then(
+          //   (value) {
+          //     print('==value en login==   $value');
+          //     Navigator.of(context).pushNamed(Routes.loginSuccessful);
+          //   },
+          // );
         },
         child: const Icon(Icons.arrow_forward),
       ),
